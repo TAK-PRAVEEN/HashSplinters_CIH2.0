@@ -44,8 +44,7 @@ class PlagiaGuard:
         results = self.output()
         if results:
             links = {}
-            for item in results['items'][:10]:
-                links[item['name']] = item['html_url']
+            for item in results['items'][:10]: links[item['name']] = item['html_url']
             return links
         else:
             return {}
@@ -58,9 +57,9 @@ class PlagiaGuard:
                 "URL" : list(links.values())
             }
             df = pd.DataFrame(data = data)
-            indexes = [i for i in range(1, 11)]
-            df.index = indexes
-
+            # indexes = [i for i in range(1, 11)]
+            df.index = pd.RangeIndex(start=1, stop=len(df) + 1)
+            df.insert(0, "S.No.", df.index)
             df['URL'] = df['URL'].apply(lambda url: f'<a href="{url}" target="_blank" rel="noopener noreferrer">{url}</a>')
             
             html_table = df.to_html(escape=False, index=False)

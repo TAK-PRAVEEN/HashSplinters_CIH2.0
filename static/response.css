@@ -68,31 +68,6 @@ th, td {
     vertical-align: middle;
 }
 
-.back-img {
-    width: 60px;
-    padding: 0px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    display: block;      
-    margin-left: auto;  
-}
-
-.back:hover{
-    .back2{
-        transform: translate(-50%, -50%);
-
-    }
-}
-
-.back:hover::after {
-    transform: translateY(0);
-}
-a {
-    color: #0E3386; 
-    text-decoration: none;
-}
-
 a:hover {
     text-decoration: underline;
     color: #E0FFFF; 
@@ -106,10 +81,37 @@ a:active {
     color: blue;
 }
 
-@media (max-width: 768px) {
-            .back {
-                width: 60px;
-                height: 60px;
-                font-size: 18px;
-            }
-          }
+
+.image-wrapper {
+     position: relative;
+     align-items: right;
+     margin-left: auto;
+     padding-right: 70px;
+}
+
+.default-image {
+    position: absolute;
+    width: 60px;
+    cursor: pointer;      
+    margin-left: auto;
+}
+
+.hover-image {
+     position: absolute;
+     top: 0;
+     width: 60px;
+    cursor: pointer;     
+    margin-left: auto;
+    display: none;
+   }
+
+.image-wrapper:hover .default-image {
+     display: none;
+   }
+
+.image-wrapper:hover .hover-image {
+     display: block;
+   }
+
+
+
