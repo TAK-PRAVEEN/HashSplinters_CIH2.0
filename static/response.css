@@ -79,8 +79,7 @@ th, td {
 }
 
 .back:hover{
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease;
+    .bac2
 }
 
 .back:hover::after {
