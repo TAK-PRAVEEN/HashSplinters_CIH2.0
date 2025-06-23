@@ -44,7 +44,8 @@ class PlagiaGuard:
         results = self.output()
         if results:
             links = {}
-            for item in results['items'][:10]: links[item['name']] = item['html_url']
+            for item in results['items'][:10]: 
+                links[item['name']] = item['html_url']
             return links
         else:
             return {}
