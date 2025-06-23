@@ -16,11 +16,5 @@ templates = Jinja2Templates(directory="templates")
 async def load_form(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
-@app.post("/submit", response_class=HTMLResponse)
-async def respond_from(request: Request, code: str = Form(...)):
-    pg = PlagiaGuard(code)
-    results = pg.table_output()
-    return templates.TemplateResponse("response.html", {"request": request, "html_table": results})
-
 if __name__ == '__main__':
     uvicorn.run(app, host="127.0.0.1", port=8000)

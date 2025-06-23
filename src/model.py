@@ -18,7 +18,8 @@ class PlagiaGuard:
 
     def logic(self):
         GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-        
+        if not GITHUB_TOKEN:
+            return "GitHub token not found. Please set GITHUB_TOKEN environment variable."
         
         query = self.code
 

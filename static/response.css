@@ -68,7 +68,7 @@ th, td {
     vertical-align: middle;
 }
 
-.back {
+.back-img {
     width: 60px;
     padding: 0px;
     border: none;
@@ -79,7 +79,9 @@ th, td {
 }
 
 .back:hover{
-    .bac2
+    .back2{
+
+    }
 }
 
 .back:hover::after {
